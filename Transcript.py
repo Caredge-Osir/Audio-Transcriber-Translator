@@ -43,5 +43,5 @@ for filename in os.listdir(audio_folder):
         except Exception as e:
             print(f"Error with file {filename}: {e}")
 
-print("\n✅ Transcription complete for all audio files.")
+print("\n Transcription complete for all audio files.")
 

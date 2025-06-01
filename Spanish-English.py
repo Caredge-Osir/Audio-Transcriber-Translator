@@ -39,7 +39,7 @@ def translate_to_english(text):
 for filename in sorted(os.listdir(audio_folder)):
     if any(filename.lower().endswith(ext) for ext in supported_exts):
         audio_path = os.path.join(audio_folder, filename)
-        print(f"\n🎧 Processing: {filename}")
+        print(f"\n Processing: {filename}")
 
         try:
             # 1. Transcription
@@ -51,8 +51,8 @@ for filename in sorted(os.listdir(audio_folder)):
             english_translated = translate_to_english(spanish_cleaned)
 
             # 3. Display on terminal
-            print("\n📝 Transcripción (Español):\n" + spanish_cleaned)
-            print("\n🌐 Translation (English):\n" + english_translated)
+            print("\n Transcripción (Español):\n" + spanish_cleaned)
+            print("\n Translation (English):\n" + english_translated)
 
             # 4. Save to file
             base_name = os.path.splitext(filename)[0]
@@ -60,12 +60,12 @@ for filename in sorted(os.listdir(audio_folder)):
 
             with open(output_path, "w", encoding="utf-8") as f:
                 f.write(f"=== {filename} ===\n\n")
-                f.write("📝 Transcripción en Español:\n")
+                f.write("Transcripción en Español:\n")
                 f.write(spanish_cleaned + "\n\n")
-                f.write("🌐 Traducción al Inglés:\n")
+                f.write("Traducción al Inglés:\n")
                 f.write(english_translated + "\n")
 
-            print(f"✅ Saved transcript: {output_path}")
+            print(f" Saved transcript: {output_path}")
 
         except Exception as e:
-            print(f"❌ Error with file {filename}: {e}")
+            print(f"Error with file {filename}: {e}")

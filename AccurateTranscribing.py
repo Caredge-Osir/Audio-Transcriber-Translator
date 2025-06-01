@@ -25,7 +25,7 @@ with open(output_file, "w", encoding="utf-8") as outfile:
     for filename in sorted(os.listdir(audio_folder)):
         if any(filename.lower().endswith(ext) for ext in supported_exts):
             audio_path = os.path.join(audio_folder, filename)
-            print(f"\n🎧 Transcribing: {filename}")
+            print(f"\n Transcribing: {filename}")
 
             try:
                 # Transcribe with Spanish language and progress output
@@ -37,6 +37,6 @@ with open(output_file, "w", encoding="utf-8") as outfile:
                 outfile.write("\n\n\n")
 
             except Exception as e:
-                print(f"❌ Error with {filename}: {e}")
+                print(f"Error with {filename}: {e}")
 
-print("\n✅ All transcriptions saved to:", output_file)
+print("\n All transcriptions saved to:", output_file)
